@@ -1,7 +1,7 @@
 import ExpenseItem from "./ExpenseItem"
 import "./Expenses.css"
 
-function Expenses(props) {
+const Expenses = (props) => {
   console.log('hi', props)
   if (props !== null) {
     props?.map(expense => {
