@@ -1,0 +1,8 @@
+{
+  "indent_style": "space",
+  "indent_size": 2,
+  "semi": false,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "trailingComma": "none"
+}
