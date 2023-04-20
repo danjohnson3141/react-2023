@@ -1,7 +1,11 @@
+import React, { useState } from 'react'
 import ExpenseItem from "./components/Expenses/ExpenseItem"
 import NewExpense from "./components/NewExpense/NewExpense"
+import ExpenseFilter from "./components/ExpenseFilter/ExpenseFilter"
 
 const App =() => {
+
+  const [filteredYear, setFilteredYear] = useState('2022')
 
   const expenses = [
     {
@@ -25,9 +29,18 @@ const App =() => {
     },
   ]
 
+  const addExpenseHandler = (expense) => {
+    console.log('here: ', expense)
+  }
+  const onFilterChangeHandler = (filter) => {
+    setFilteredYear(filter)
+    console.log('onFilterChangeHandler: ', filter)
+  }
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <ExpenseFilter selected={filteredYear} onFilterChange={onFilterChangeHandler} />
       <div className="expenses">
         <ExpenseItem
           title={expenses[0].title}
